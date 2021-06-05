@@ -55,21 +55,6 @@ export default function NewTesting() {
             })
     }
 
-    async function get_request_ID(Celeberity_Address) {
-        const web3 = window.web3;
-        const Ethaccounts = await web3.eth.getAccounts();
-
-        const Contract = new web3.eth.Contract(HashinkABI.abi, HashinkContractAddress);
-
-        await Contract.methods
-            .CreateRequest(Celeberity_Address)
-            .call( {from: Ethaccounts[0], value: 1000000}, function (error, res) {
-                console.log("ID: " + res);
-            })
-    }
-
-    //www.google.com is where the IPFS hash would go or where ever the meta
-    //is going to be stored.
     async function sign_request() {
         const web3 = window.web3;
         const Ethaccounts = await web3.eth.getAccounts();
@@ -81,6 +66,19 @@ export default function NewTesting() {
             .send( {from: Ethaccounts[0]})
             .once("receipt", (res) => {
                 console.log(res);
+            })
+    }
+
+    async function get_request_ID(Celeberity_Address) {
+        const web3 = window.web3;
+        const Ethaccounts = await web3.eth.getAccounts();
+
+        const Contract = new web3.eth.Contract(HashinkABI.abi, HashinkContractAddress);
+
+        await Contract.methods
+            .CreateRequest(Celeberity_Address)
+            .call( {from: Ethaccounts[0], value: 1000000}, function (error, res) {
+                console.log("ID: " + res);
             })
     }
 
@@ -124,7 +122,6 @@ export default function NewTesting() {
             })
     }
 
-    //try one more time using different hash .....
     useEffect( async () => {
         await loadWeb3();
 
@@ -135,7 +132,7 @@ export default function NewTesting() {
         //await check_celebrity_meta("0x494A8b5b59e404153ec26ceDef91df98D2eeecb5");
         //await get_request_ID("0x494A8b5b59e404153ec26ceDef91df98D2eeecb5");
         //await check_request_params("0x3683dd5501be97a1aa585224abf13f5eb969e6044d90d130d28051ba607ca203");
-        await check_tokenURI(0);
+        //await check_tokenURI(0);
 
         //console.log("Hello");
     })
