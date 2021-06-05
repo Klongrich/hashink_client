@@ -6,8 +6,6 @@ import LogoText from "../Images/ink-long.svg";
 import { ShoppingCart } from "@styled-icons/evaicons-solid/ShoppingCart";
 
 const Container = styled.div`
-    background-color: white;
-
     ul {
         list-style-type: none;
         display: inline-block;
@@ -21,6 +19,9 @@ const Container = styled.div`
         color: grey;
         border-right: 1px solid grey;
     }
+    padding-bottom: 80px;
+
+    background-color: blue;
 `
 
 const CartButton = styled.div`
