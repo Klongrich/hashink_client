@@ -1,0 +1,5 @@
+Rinkeby Contracts deployment addresses:
+
+CelebrityContract address =>  0xbD16404c82094583898e97cF55F2B6fa6Bb07B1B
+AutographContract address =>  0x70F6150F0fa229098eFe84e44B911447E7b95E29
+AutographRequestContract address =>  0x858981AA2b1eA9f4dEe48b3e59ba8E202F105db8
