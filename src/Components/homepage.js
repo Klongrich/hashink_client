@@ -115,7 +115,7 @@ export default function HomePage () {
                         <br />
                         {data.title}
                         <br />
-                    <img Style="float: left" src={TestingPic} height="100" width="100" />
+                    <img Style="float: left" src={TestingPic} height="100" width="100" alt="testingPic" />
                     </SpotLightBox>
                 </>
             ))}

@@ -55,8 +55,8 @@ export default function Footer () {
         </Container>
 
         <LogoContainer>
-            <img src={LogoImage} height="150" width="75" />
-            <img src={LogoText} height="150" width="75" />
+            <img src={LogoImage} height="150" width="75" alt="LogoImage" />
+            <img src={LogoText} height="150" width="75" alt="LogoText" />
         </LogoContainer>
         </>
     )

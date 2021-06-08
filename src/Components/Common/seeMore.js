@@ -6,9 +6,6 @@ import { seeMoreDataOne, seeMoreDataTwo } from "../../Data/homePageData"
 import { StarRate} from "@styled-icons/material/StarRate"
 import { Star } from "@styled-icons/boxicons-regular/Star"
 
-import StockImage from "../MySig.png";
-
-
 const Container = styled.div`
     color: #CCCDCC;
 
@@ -62,7 +59,7 @@ export default function SeeMore () {
             {seeMoreDataOne.map((data) => (
                 <>
                 <LogoContainer>
-                <img src={data.image} height="100px" />
+                <img src={data.image} height="100px" alt="logoContainer" />
                 </LogoContainer>
                     {data.name}
                     <StarRate size="17" />
@@ -80,7 +77,7 @@ export default function SeeMore () {
             {seeMoreDataTwo.map((data) => (
                 <>
                 <LogoContainer>
-                    <img src={data.image} height="100px" />
+                    <img src={data.image} height="100px" alt="logoContainer" />
                 </LogoContainer>
                     {data.name}
                     <StarRate size="17" />

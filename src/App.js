@@ -53,8 +53,8 @@ function App() {
         <Container>
 
             <FloatBox>
-                <img src={LogoImage} width="75" height="75" />
-                <img src={LogoText} width="110" height="75" />
+                <img src={LogoImage} width="75" height="75" alt="LogoImage"/>
+                <img src={LogoText} width="110" height="75" alt="LogoText" />
             </FloatBox>
             
             <FloatBox>
@@ -77,7 +77,7 @@ function App() {
     )
   }
 
-  if (pageState == "homepage") {
+  if (pageState === "homepage") {
   return (
     <>
       <Header />
@@ -88,7 +88,7 @@ function App() {
       </button>
     </>
   );
-  } else if (pageState == "drawing") {
+  } else if (pageState === "drawing") {
     return (
       <>
         <Header />
@@ -99,7 +99,7 @@ function App() {
         </button>
       </>
     )
-  } else if (pageState == "signing") {
+  } else if (pageState === "signing") {
     return (
       <>
         <Header />
@@ -110,7 +110,7 @@ function App() {
         </button>
       </>
     )
-  } else if (pageState == "incomingRequest") {
+  } else if (pageState === "incomingRequest") {
     return (
       <>
         <Header />
@@ -121,7 +121,7 @@ function App() {
         </button>
       </>
     )
-  } else if (pageState == "gallery") {
+  } else if (pageState === "gallery") {
     return (
       <>
         <Header />

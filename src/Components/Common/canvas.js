@@ -4,8 +4,7 @@ import Web3 from "web3";
 import styled from "styled-components";
 
 import {useBrush, Artboard } from "react-artboard";
-import { NFTStorage, Blob } from "nft.storage";
-import { Download } from "@styled-icons/boxicons-regular/Download"
+import { NFTStorage} from "nft.storage";
 
 import HashinkABI from "../Hashink.json";
 const  HashinkContractAddress = "0x649D13D78bAB1E45E36180aa566519b57e5A6694";
@@ -115,56 +114,9 @@ export default function Canvans() {
       mint_new_token(metadata.url);
     }
 
-    async function send_data_to_ipfs_legacy() {
-
-        // const image = new Blob([JSON.stringify(artboardRef.getImageAsDataUri())])
-        // const cid = await client.storeBlob(image)
-
-        // let imageURL = "https://ipfs.io/ipfs/" + cid;
-        // let data;
-
-        // data = {
-        //   "name" : "testing open sea meta",
-        //   "description" : "This is some more meta",
-        //   "image" : imageURL,
-        //   "attributes" : [
-        //     {
-        //       "trait_type" : "more meta testing",
-        //       "value" : 100
-        //     }
-        //   ]
-        // }
-
-        // const full_content = new Blob([JSON.stringify(data)]);
-        // const full_cid = await client.storeBlob(full_content);
-
-        // console.log("cid: " + cid);
-        // console.log("full_cid: " + full_cid);
-
-        // let tokenMetaURL = "https://ipfs.io/ipfs/" + full_cid;
-        
-        // mint_new_token(tokenMetaURL);
-        // setImageIPFShash(cid);
-
-
-        // mint_new_token(tokenURL);
-        // cid is the IPFS hash that the ImageURI has converted to.
-    }
-
-    function getImageFromIPFS() {
-      fetch('https://ipfs.io/ipfs/bafkreihixqg6inik6baeoyagsx46zwahuxyvern7rpeenedc226zmvgl2a')
-      .then(response =>  {
-        return response.json();
-      }).then(data => {
-        setImageURI(data);
-      })
-    }
-
     useEffect( async () => {
       await loadWeb3();
-
-      console.log("ImageUR: " + imageURI);
-    })
+    }, [])
 
     return (
       <>

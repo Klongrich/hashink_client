@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -41,12 +41,6 @@ const NewsLetterBox = styled.div`
 
 export default function Newsletter () {
 
-    const [email, setEmail] = useState("Email Address")
-
-    useEffect(() => {
-        console.log(email);
-    })
-
     return (
         <>
             <Container>
@@ -58,7 +52,7 @@ export default function Newsletter () {
                 
                 <EmailBox>
                     <EmailInput
-                        placeholder={email}
+                        placeholder={"Enter Your Email"}
                     />
                     <SubscribeBox>
                         Subscribe

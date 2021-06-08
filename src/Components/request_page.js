@@ -14,7 +14,7 @@ import Web3 from "web3";
 import HashinkABI from "./Hashink.json";
 
 const HashinkContractAddress = "0x649D13D78bAB1E45E36180aa566519b57e5A6694";
-const ONE_ETHER = 1000000000000000000;
+//const ONE_ETHER = 1000000000000000000;
 
 //This will have to be pulled from the sever or maybe attached to the IPFS as well
 export const ExampleData = {
@@ -107,18 +107,18 @@ export default function RequestPage() {
             })
     }
 
-    async function get_request_ID(Celeberity_Address) {
-        const web3 = window.web3;
-        const Ethaccounts = await web3.eth.getAccounts();
+    // async function get_request_ID(Celeberity_Address) {
+    //     const web3 = window.web3;
+    //     const Ethaccounts = await web3.eth.getAccounts();
 
-        const Contract = new web3.eth.Contract(HashinkABI.abi, HashinkContractAddress);
+    //     const Contract = new web3.eth.Contract(HashinkABI.abi, HashinkContractAddress);
 
-        await Contract.methods
-            .CreateRequest(Celeberity_Address)
-            .call( {from: Ethaccounts[0], value: 1000000}, function (error, res) {
-                console.log("ID: " + res);
-            })
-    }
+    //     await Contract.methods
+    //         .CreateRequest(Celeberity_Address)
+    //         .call( {from: Ethaccounts[0], value: 1000000}, function (error, res) {
+    //             console.log("ID: " + res);
+    //         })
+    // }
 
     useEffect( async () => {
         await loadWeb3();
@@ -126,7 +126,7 @@ export default function RequestPage() {
 
     return (
         <>  
-            <img src={MySig} />
+            <img src={MySig} alt="mySignature" />
 
             <HeaderBox>
                 <div Style="float:left;
