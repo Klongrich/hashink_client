@@ -80,19 +80,6 @@ export default function RequestPage() {
 
     const [isRequesting, setIsRequestState] = useState(false);
 
-    async function loadWeb3() {
-        if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-          await window.ethereum.enable();
-          return true;
-        } else if (window.web3) {
-          window.web3 = new Web3(window.web3.currentProvider);
-          return true;
-        } else {
-          return false;
-        }
-    }
-
     async function send_request() {
         const web3 = window.web3;
         const Ethaccounts = await web3.eth.getAccounts();
@@ -120,8 +107,21 @@ export default function RequestPage() {
     //         })
     // }
 
-    useEffect( async () => {
-        await loadWeb3();
+    useEffect(() => {
+        async function loadWeb3() {
+            if (window.ethereum) {
+              window.web3 = new Web3(window.ethereum);
+              await window.ethereum.enable();
+              return true;
+            } else if (window.web3) {
+              window.web3 = new Web3(window.web3.currentProvider);
+              return true;
+            } else {
+              return false;
+            }
+        }
+
+        loadWeb3();
     }, [])
 
     return (

@@ -62,26 +62,12 @@ export default function Canvans() {
 
     const [artboardRef, setArtBoardRef] = useState(null);
     const [image, setImage] = useState(null);
-    const [imageURI, setImageURI] = useState(null);
     const [previewImage, setPreviewImage] = useState(null);
 
     const [metaName, setMetaName] = useState("Enter Name");
     const [metaDiscrtiption, setMetaDiscription] = useState("Enter Description");
 
     const brush = useBrush({color: "black", strokeWidth: 10 });
-
-    async function loadWeb3() {
-      if (window.ethereum) {
-        window.web3 = new Web3(window.ethereum);
-        await window.ethereum.enable();
-        return true;
-      } else if (window.web3) {
-        window.web3 = new Web3(window.web3.currentProvider);
-        return true;
-      } else {
-        return false;
-      }
-  }
 
     async function mint_new_token(tokenURI) {
       const web3 = window.web3;
@@ -114,8 +100,22 @@ export default function Canvans() {
       mint_new_token(metadata.url);
     }
 
-    useEffect( async () => {
-      await loadWeb3();
+    useEffect(() => {
+      async function loadWeb3() {
+        if (window.ethereum) {
+          window.web3 = new Web3(window.ethereum);
+          await window.ethereum.enable();
+          return true;
+        } else if (window.web3) {
+          window.web3 = new Web3(window.web3.currentProvider);
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      loadWeb3();
+      
     }, [])
 
     return (
@@ -179,7 +179,7 @@ export default function Canvans() {
             <div Style="border: 1px solid black;
                         height: 500px; 
                         width: 500px;">
-              <img style={{width: 500, height: 500}} src={previewImage} /> 
+              <img style={{width: 500, height: 500}} src={previewImage} alt="previewImage" /> 
             </div>
 
             <br />
