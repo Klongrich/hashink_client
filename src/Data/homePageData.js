@@ -1,3 +1,5 @@
+import StockImage from "../Components/MySig.png";
+
 export const rankingData = [
     {
         id: 0,
@@ -66,41 +68,50 @@ export const spotLightData = [
 ]
 
 
-export const seeMoreData = [
+export const seeMoreDataOne = [
     {
         id: 0,
-        name: "Product Name: ",
-        price: "$300",
+        name: "Kyle's Signature: ",
+        price: "$7,800",
         rating: "3 stars",
+        image: StockImage
     },
     {
         id: 1,
-        name: "Product Name: ",
-        price: "$300",
+        name: "Top Rated: ",
+        price: "$600",
         rating: "3 stars",
+        image: StockImage
     },   
     {
         id: 2,
-        name: "Product Name: ",
-        price: "$300",
+        name: "CeleberityZ",
+        price: "$42,000",
         rating: "3 stars",
-    },    
+        image: StockImage
+    }
+]
+
+export const seeMoreDataTwo = [
     {
         id: 3,
-        name: "Product Name: ",
-        price: "$300",
+        name: "Elon Musk: ",
+        price: "10 DOGE",
         rating: "3 stars",
+        image: StockImage 
     },    
     {
         id: 4,
-        name: "Product Name: ",
-        price: "$300",
+        name: "Vitalik:  ",
+        price: "10,000 ETH",
         rating: "3 stars",
+        image: StockImage
     },    
     {
         id: 5,
         name: "Product Name: ",
         price: "$300",
         rating: "3 stars",
+        image: StockImage
     }
 ]

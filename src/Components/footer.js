@@ -1,15 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
+import LogoText from "../Images/ink-long.svg";
+import LogoImage from "../Images/ink2.svg";
+
 const Container = styled.div`
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
     padding: 25px;
+    margin-left: 38%;
+    margin-top: -35px;
+
+    color: #C6C7C6;
 
     ul {
         float:left;
-        margin-right: 10px
+        margin-right: 10px;
     }
+
+    li {
+        list-style-type: none;
+        padding-top: 10px;
+    }
+`
+
+const LogoContainer = styled.div`
+    margin-right: 80%;
+    margin-bottom: 150px;
 `
 
 export default function Footer () {
@@ -38,6 +53,11 @@ export default function Footer () {
             <li>Instagram</li>
         </ul>
         </Container>
+
+        <LogoContainer>
+            <img src={LogoImage} height="150" width="75" />
+            <img src={LogoText} height="150" width="75" />
+        </LogoContainer>
         </>
     )
 }

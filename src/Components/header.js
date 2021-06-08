@@ -20,8 +20,6 @@ const Container = styled.div`
         border-right: 1px solid grey;
     }
     padding-bottom: 80px;
-
-    background-color: blue;
 `
 
 const CartButton = styled.div`
